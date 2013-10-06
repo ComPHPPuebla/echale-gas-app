@@ -1,0 +1,37 @@
+{% if form is not null %}
+    {{ form().openTag(form)|raw }}
+    {% for element in form %}
+        {% if element.getAttribute('type') == 'submit' %}
+            <div class="form-actions">
+                {{ formButton().openTag({"class": "btn btn-success", "id":"send"})|raw }}
+                    {{ element.value }}
+                {{ formButton().closeTag()|raw }}
+                <span class="muted help-inline">
+                    &nbsp;Los campos marcados con
+                    <acronym class="required" title="Este valor es obligatorio">*</acronym>
+                    son obligatorios
+                </span>
+            </div>
+        {% else %}
+            {% if element.getAttribute('type') == 'hidden' %}
+                {{ formElement(element) }}
+                {{ formElementErrors(element, {"class": "errors"}) }}
+            {% else %}
+                <div class="control-group">
+                    {{ formLabel().opentag({"class": "control-label"})|raw }}
+                        {% if element.getAttribute('required') == 'true' %}
+                            {{ element.label }} <acronym class="required" title="Este valor es obligatorio">*</acronym>
+                        {% else %}
+                            {{ element.label }}
+                        {% endif %}
+                    {{ formLabel().closeTag()|raw}}
+                    <div class="controls">
+                        {{ formElement(element) }}
+                        {{ formElementErrors(element, {"class": "errors"}) }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {{ form().closeTag(form)|raw }}
+{% endif %}

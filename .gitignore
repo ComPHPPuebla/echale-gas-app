@@ -1,4 +1,6 @@
-.properties
 .buildpath
 .settings
 .project
+doctrine-migrations.phar
+box.phar
+vendor
