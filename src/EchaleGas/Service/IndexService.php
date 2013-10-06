@@ -1,7 +1,13 @@
 <?php
-
 namespace EchaleGas\Service;
 
+use \Guzzle\Plugin\Log\LogPlugin;
+use \Guzzle\Log\MessageFormatter;
+use \Guzzle\Log\MonologLogAdapter;
+use \Monolog\Handler\StreamHandler;
+use \Monolog\Logger;
+use \Guzzle\Service\Description\ServiceDescription;
+use \Guzzle\Service\Client;
 use \EchaleGas\Service\ClientService;
 
 class IndexService extends ClientService
@@ -11,9 +17,9 @@ class IndexService extends ClientService
 	* \EchaleGas\Form\Form
 	**/
 	protected $form;
-	
+
 	protected $formOptionsPath;
-	
+
 	/**
      * Initialize form options and routes names
      */
@@ -21,10 +27,7 @@ class IndexService extends ClientService
     {
         $this->formOptionsPath = __DIR__.('/../../../config/index.php');
     }
-	
-	/**
-     * @return \Mandragora\Form\CrudForm
-     */
+
     protected function getForm()
     {
         if (!$this->form) {
@@ -33,9 +36,26 @@ class IndexService extends ClientService
 
         return $this->form;
     }
-    
-    public function getFormIndex()
+
+    public function getIndexForm()
     {
-    	return array('form' => $this->getForm());
+        $client = $this->createEchaleGasClient();
+
+    	return ['form' => $this->getForm(), 'stations' => $client->showStations()];
+    }
+
+    public function createEchaleGasClient()
+    {
+        $client = new Client();
+        $client->setDescription(ServiceDescription::factory(
+            __DIR__ . '/../../../config/services/echalegas.json'
+        ));
+        $logger = new Logger('debug');
+        $logger->pushHandler(new StreamHandler('../logs/debug.log'));
+        $logPlugin = new LogPlugin(new MonologLogAdapter($logger), MessageFormatter::DEBUG_FORMAT);
+
+        $client->addSubscriber($logPlugin);
+
+        return $client;
     }
 }
