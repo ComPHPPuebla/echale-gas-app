@@ -1,0 +1,49 @@
+html, body{ height: 100%; margin: 0; padding: 0; }
+form{ margin: 0; }
+
+#global-map{ 
+	height: 100%;
+	position: absolute; 
+	width: 100%; 
+	z-index: 0;
+}
+#global-map *, #global-map *:before, #global-map *:after {
+	-moz-box-sizing: content-box!important;
+	-webkit-box-sizing: content-box!important;
+	box-sizing: content-box!important;  
+}
+#global-map img { max-width: none; }
+#global-map label { width: auto; display: inline; }
+
+#main{ position: relative; z-index: 1; }
+
+#show-content{ display: none; }
+.toggle-content{ color: #FFF; background-color: #888888; left: 0; padding: 1em; position: absolute; top: -5em; }
+
+header{ background-color: rgba(53,143,76,0.8); padding: 1em 0; }
+header form h1, header input, header a{ margin: 0 !important; }
+header h1{ color: #FFF; font-size: 1.5em; margin: 0; }
+
+#container{ position: fixed; bottom: 0; width: 100%; }
+#container #content{ background-color: #FFF; padding: 1em; }
+#container #comments form a{  margin-left: 1em; display: none; }
+#container .avatar{ padding-top: 1.5em; text-align: center; }
+#container .comment{ border-bottom: 1px solid #CCC;  padding-top: 1em; }
+#container .comment h4{ font-size: 1em; margin: 0; }
+
+.tooltip-cont{ padding: 1em; }
+
+.gas{ list-style: none; }
+.gas li img,
+.gas li small{ display: inline-block; vertical-align: middle; margin-right: 0.5em; }
+
+
+@media only screen and (min-width: 320px) and (max-width: 767px){
+	#container #comments form a{ display: inline-block; }
+	#container #content{ font-size: 0.8em; overflow-y: auto; height: 170px; }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	#container #comments form a{ display: inline-block; }
+	#container #content{ font-size: 1em; overflow-y: auto; height: 300px; }
+}
