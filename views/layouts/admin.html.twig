@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en" ><!--<![endif]-->
+
+<head>
+	{% include 'sections/admin/head.html.twig' %}
+</head>
+<body>
+
+<div id="tooltips" class="tooltip row">
+	<div class="tooltip-cont large-12 columns">
+		<div class="row">
+			<div>
+				<b>Fulanito S.A. de C.V.</b>
+				<ul class="gas inline-list">
+					<li><img src="img/thumbsup.png" alt=""><small>3500</small></li>
+					<li><img src="img/soso.png" alt=""><small>3500</small></li>
+					<li><img src="img/thumbsdown.png" alt=""><small>3500</small></li>
+				</ul>
+				<a href="#">Ver está gasolinera</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'sections/admin/form-search.html.twig' %}
+	
+<div id="global-map"></div>
+
+<div id="main">
+	<section id="container">
+		<div id="content" class="row">
+			{% block content %}{% endblock %}
+		</div>
+	</section>
+</div>
+	{% include 'sections/admin/footer.html.twig' %}
+</body>
+</html>

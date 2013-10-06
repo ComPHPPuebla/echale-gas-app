@@ -1,0 +1,74 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block content %}
+<a href="#" id="hide-content" class="toggle-content">Ocultar</a>
+<a href="#" id="show-content" class="toggle-content">Ver</a>
+
+<div id="comments" class="small-12 large-8 columns">
+	<div class="row">
+		<div class="large-12 columns">
+			<h3>Últimos comentarios:</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<form action="">
+				<textarea name="" id="" placeholder="Agrega un comentario"></textarea>
+				<input type="submit" value="Comentar" class="medium button">
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-2 large-2 columns avatar">
+			<img src="img/avatar.png" alt="">
+		</div>
+		<div class=" small-10 large-10 columns comment">
+			<h4>@john_doe</h4>
+			<small>Hace un día</small>
+			<p>La gasolinera Fulano es muy buena y excelente servicio</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-2 large-2 columns avatar">
+			<img src="img/avatar.png" alt="">
+		</div>
+		<div class=" small-10 large-10 columns comment">
+			<h4>@john_doe</h4>
+			<small>Hace un día</small>
+			<p>La gasolinera Fulano es muy buena y excelente servicio</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-2 large-2 columns avatar">
+			<img src="img/avatar.png" alt="">
+		</div>
+		<div class=" small-10 large-10 columns comment">
+			<h4>@john_doe</h4>
+			<small>Hace un día</small>
+			<p>La gasolinera Fulano es muy buena y excelente servicio</p>
+		</div>
+	</div>
+</div>
+<div class="small-12 large-4 columns">
+	<div class="row">
+		<div class="large-12 columns">
+			<h5>Fulanito S.A. de C.V.</h5>
+			<p>Morbi vulputate magna eget urna commodo tempus in sit amet velit. Mauris at pretium mauris.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<h5>Califica esta gasolinera:</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<ul class="gas inline-list">
+				<li><img src="img/thumbsup.png" alt=""><small>3500</small></li>
+				<li><img src="img/soso.png" alt=""><small>3500</small></li>
+				<li><img src="img/thumbsdown.png" alt=""><small>3500</small></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
