@@ -1,0 +1,27 @@
+{
+    "name": "comphppuebla/echale-gas-app",
+    "description": "Sistema de administración",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Misraim Mendoza",
+            "email": "misraim.mendoza@mandragora-web-systems.com"
+        }
+    ],
+    "require": {
+		"twig/twig": "v1.14.0",
+		"zendframework/zend-form": "2.2.3",
+		"zendframework/zend-servicemanager": "2.2.3",
+		"zendframework/zend-view": "2.2.3",
+		"zendframework/zend-i18n": "2.2.3",
+		"slim/slim": "2.3.2",
+		"slim/extras": "2.0.3",
+		"slim/views": "0.1.*",
+		"guzzle/guzzle": "v3.7.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "EchaleGas": "src"
+        }
+    }
+}
