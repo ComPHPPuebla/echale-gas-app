@@ -1,11 +1,32 @@
 {
     "name": "comphppuebla/echale-gas-app",
-    "description": "Sistema de administración",
+    "description": "Échale Gas Web Application",
     "license": "MIT",
     "authors": [
         {
+            "name": "Luis Montealegre",
+            "email": "luis.montealegre@mandragora-web-systems.com",
+            "role": "developer"
+        },
+        {
+            "name": "Isaac García",
+            "email": "isaac.gasi@gmail.com",
+            "role": "developer"
+        },
+        {
+            "name": "Daniel Chávez",
+            "email": "daniel.chavez.santos@gmail.com",
+            "role": "developer"
+        },
+        {
+            "name": "Luis Antonio Gómez",
+            "email": "jimmylagp@gmail.com",
+            "role": "developer"
+        },
+        {
             "name": "Misraim Mendoza",
-            "email": "misraim.mendoza@mandragora-web-systems.com"
+            "email": "misraim.mendoza@mandragora-web-systems.com",
+            "role": "developer"
         }
     ],
     "require": {
@@ -13,10 +34,13 @@
 		"zendframework/zend-form": "2.2.3",
 		"zendframework/zend-servicemanager": "2.2.3",
 		"zendframework/zend-view": "2.2.3",
+		"zendframework/zend-escaper": "2.2.3",
 		"zendframework/zend-i18n": "2.2.3",
+		"zendframework/zend-session": "2.2.3",
+		"zendframework/zend-math": "2.2.3",
 		"slim/slim": "2.3.2",
-		"slim/extras": "2.0.3",
-		"slim/views": "0.1.*",
+		"slim/views": "0.1.0",
+		"monolog/monolog": "1.6.0",
 		"guzzle/guzzle": "v3.7.4"
     },
     "autoload": {

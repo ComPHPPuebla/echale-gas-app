@@ -2,10 +2,8 @@
 use \Slim\Log;
 use \Slim\Extras\Log\DateTimeFileWriter;
 
-return array(
-	'debug' => false,
-	'log.enabled' => true,
-	'log.level' => Log::DEBUG,
-	'log.writer' => new DateTimeFileWriter(array('path' => '../logs')),
+return [
+	'debug' => true,
 	'mode' => 'development',
-);
+	'templates.path' => '../views',
+];
