@@ -1,0 +1,181 @@
+{
+    "name": "Comunidad PHP",
+    "apiVersion": "1.0",
+    "baseUrl": "http://api.echalegas.com.mx",
+    "description": "Échale Gas REST API client",
+    "operations": {
+        "showStations": {
+            "httpMethod": "GET",
+            "uri": "gas-stations",
+            "summary": "Show the information of gas stations.",
+            "responseClass": "showStationsOutput",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer",
+                    "default": 1
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "showStation": {
+            "httpMethod": "GET",
+            "uri": "gas-stations/{stationId}",
+            "summary": "Show the information of a given gas station.",
+            "responseClass": "showStationOutput",
+            "parameters": {
+                "stationId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "newStation": {
+            "httpMethod": "POST",
+            "uri": "gas-stations",
+            "summary": "Create a new gas station entry.",
+            "responseClass": "newStationOutput",
+            "parameters": {
+                "name": {
+                    "location": "postField",
+                    "type": "string"
+                },
+                "socialReason": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "social_reason"
+                },
+                "addressLine1": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "address_line_1"
+                },
+                "addressLine2": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "address_line_2"
+                },
+                "location": {
+                    "location": "postField",
+                    "type": "string"
+                },
+                "latitude": {
+                    "location": "postField",
+                    "type": "float"
+                },
+                "longitude": {
+                    "location": "postField",
+                    "type": "float"
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "editStation": {
+            "httpMethod": "PUT",
+            "uri": "gas-stations/{contactId}",
+            "summary": "Edit the information of a given gas station.",
+            "responseClass": "editStationOutput",
+            "parameters": {
+                "stationId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true,
+                    "sentAs": "station_id"
+                },
+                "socialReason": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "social_reason"
+                },
+                "addressLine1": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "address_line_1"
+                },
+                "addressLine2": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "address_line_2"
+                },
+                "location": {
+                    "location": "postField",
+                    "type": "string"
+                },
+                "latitude": {
+                    "location": "postField",
+                    "type": "float"
+                },
+                "longitude": {
+                    "location": "postField",
+                    "type": "float"
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "deleteContact": {
+            "httpMethod": "DELETE",
+            "uri": "contacts/{contactId}",
+            "summary": "Delete the information of a given station.",
+            "parameters": {
+                "stationId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true,
+                    "sentAs": "station_id"
+                }
+            }
+        }
+    },
+    "models": {
+        "showStationsOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        },
+        "showStationOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        },
+        "newStationOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        },
+        "editStationOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        }
+    }
+}
