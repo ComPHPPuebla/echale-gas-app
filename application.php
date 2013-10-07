@@ -1,5 +1,5 @@
 <?php
-chdir(getcwd());
+chdir(__DIR__);
 
 require 'vendor/autoload.php';
 

@@ -15,14 +15,14 @@ $app->container->singleton('twig', function(){
 
     $viewTig->parserOptions = [
         'charset' => 'utf-8',
-        'cache' => realpath('../views/cache'),
+        'cache' => realpath('views/cache'),
         'auto_reload' => true,
         'strict_variables' => false,
         'autoescape' => true,
     ];
 
     $viewTig->twigTemplateDirs = [
-        realpath('../views'),
+        realpath('views'),
     ];
 
     $viewTig->parserExtensions = [
@@ -40,7 +40,7 @@ $app->container->singleton('twig', function(){
 
 $app->container->singleton('log', function () {
     $logger = new Logger('echale-gas-app');
-    $logger->pushHandler(new StreamHandler('../logs/app.log', LogLevel::DEBUG));
+    $logger->pushHandler(new StreamHandler('logs/app.log', LogLevel::DEBUG));
 
     return $logger;
 });

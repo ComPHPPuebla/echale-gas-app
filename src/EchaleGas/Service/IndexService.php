@@ -41,17 +41,15 @@ class IndexService extends ClientService
     {
         $client = $this->createEchaleGasClient();
 
-    	return ['form' => $this->getForm(), 'stations' => $client->showStations()];
+    	return ['form' => $this->getForm(), 'stations' => $client->showStations()->toArray()];
     }
 
     public function createEchaleGasClient()
     {
         $client = new Client();
-        $client->setDescription(ServiceDescription::factory(
-            __DIR__ . '/../../../config/services/echalegas.json'
-        ));
+        $client->setDescription(ServiceDescription::factory('config/services/echalegas.json'));
         $logger = new Logger('debug');
-        $logger->pushHandler(new StreamHandler('../logs/debug.log'));
+        $logger->pushHandler(new StreamHandler('logs/debug.log'));
         $logPlugin = new LogPlugin(new MonologLogAdapter($logger), MessageFormatter::DEBUG_FORMAT);
 
         $client->addSubscriber($logPlugin);
