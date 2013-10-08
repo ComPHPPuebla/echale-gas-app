@@ -3,4 +3,6 @@
 .project
 doctrine-migrations.phar
 box.phar
-vendor
+/vendor/
+/config/app.config.php
+/config/services/echalegas.json
