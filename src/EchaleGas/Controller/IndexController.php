@@ -1,5 +1,4 @@
 <?php
-
 namespace EchaleGas\Controller;
 
 use \EchaleGas\Service\IndexService;

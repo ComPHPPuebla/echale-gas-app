@@ -1,55 +1,54 @@
 <?php
-
-return array(
+return [
     'type' => 'EchaleGas\Form\IndexForm',
     'hydrator' => 'Zend\Stdlib\Hydrator\ArraySerializable',
-    'attributes' => array(
+    'attributes' => [
         'method' => 'post',
         'id' => 'index-form',
         'class' => 'form-horizontal',
-    ),
-    'elements' => array(
-        array(
-            'spec' => array(
+    ],
+    'elements' => [
+        [
+            'spec' => [
                 'name' => 'username',
-                'options' => array(
+                'options' => [
                     'label' => 'Nombre de usuario',
-                ),
-                'attributes' => array(
+                ],
+                'attributes' => [
                     'size' => 45,
                     'maxlength' => 20,
                     'required' => true,
-                ),
+                ],
                 'type'  => 'Text',
-            )
-        ),
-        array(
-            'spec' => array(
+            ]
+        ],
+        [
+            'spec' => [
                 'name' => 'csrf',
                 'type' => 'Csrf',
-            ),
-        ),
-        array(
-            'spec' => array(
+            ],
+        ],
+        [
+            'spec' => [
                 'name' => 'send',
-                'options' => array(
+                'options' => [
                     'label' => 'Guardar',
-                ),
-                'attributes' => array(
+                ],
+                'attributes' => [
                     'type' => 'submit',
                     'value' => 'Guardar',
-                ),
+                ],
                 'type'  => 'Button',
-            ),
-        ),
-    ),
-    'input_filter' => array(
-        'username' => array(
+            ],
+        ],
+    ],
+    'input_filter' => [
+        'username' => [
             'required' => true,
-            'filters'  => array(
-                array('name' => 'Zend\Filter\StringTrim'),
-                array('name' => 'Zend\Filter\StripTags'),
-            ),
-        ),
-    ),
-);
+            'filters'  => [
+                ['name' => 'Zend\Filter\StringTrim'],
+                ['name' => 'Zend\Filter\StripTags'],
+            ],
+        ],
+    ],
+];
