@@ -16,12 +16,10 @@ $(document).ready(function(){
 		$('#hide-content').show();
 	});
 
-
 	//-----   Google Maps   -----
 
-	var initialLocation, map, myOptions, marker;
-	//var myLatlng = new google.maps.LatLng(19.0441024, -98.1980115);
-
+	var initialLocation, map, myOptions;
+	
     navigator.geolocation.getCurrentPosition(function(position) {
       	initialLocation = new google.maps.LatLng(19.0441024, -98.1980115); //new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
     	myOptions = {
@@ -49,21 +47,27 @@ $(document).ready(function(){
 			title:"¡Estas aquí!"
 		});
 
-    	var icon_colegio = new google.maps.MarkerImage("img/marker.png", null, null, null, new google.maps.Size(23,36));
-		var colegioMarker = new google.maps.Marker({
-		      position: new google.maps.LatLng(19.0448085, -98.1943929),
-		      map: map,
-		      icon: icon_colegio,
-		      title: "Fulanito S.A. de C.V."
-		});
+    	var stations = markers._embedded.stations;
+    	var count = stations.length;
+    	for (var i = 0; i < count; i++) { 
 
-        var infoWindow = new google.maps.InfoWindow({ 
-			content: $('#tooltips').html()
-		});
-
-		google.maps.event.addListener(colegioMarker, 'mouseover', function() { 
-			infoWindow.open(map, colegioMarker); 
-		});
+    		var iconGasStation = new google.maps.MarkerImage("img/marker.png", null, null, null, new google.maps.Size(23,36));
+    	
+	    	var gasStationMarker = new google.maps.Marker({
+			      position: new google.maps.LatLng(stations[i].latitude, stations[i].longitude),
+			      map: map,
+			      icon: iconGasStation,
+			      title: stations[i].name
+			});
+	
+	        var infoWindow = new google.maps.InfoWindow({ 
+				content: $('#tooltips').html()
+			});
+	
+			google.maps.event.addListener(gasStationMarker, 'mouseover', function() { 
+				infoWindow.open(map, gasStationMarker); 
+			});
+    	}
 
 		// Resize stuff...
 		google.maps.event.addDomListener(window, "resize", function() {
