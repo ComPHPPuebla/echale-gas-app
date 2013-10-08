@@ -18,6 +18,9 @@ class IndexService extends ClientService
 	**/
 	protected $form;
 
+	/**
+	 * @var string
+	 */
 	protected $formOptionsPath;
 
 	/**
@@ -25,7 +28,7 @@ class IndexService extends ClientService
      */
     public function __construct()
     {
-        $this->formOptionsPath = __DIR__.('/../../../config/index.php');
+        $this->formOptionsPath = 'config/forms/index.php';
     }
 
     protected function getForm()

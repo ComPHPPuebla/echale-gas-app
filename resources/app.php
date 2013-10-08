@@ -44,3 +44,5 @@ $app->container->singleton('log', function () {
 
     return $logger;
 });
+
+$app->view($app->twig);
