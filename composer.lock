@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4d0247aad7c3dd18853694baeaebf285",
+    "hash": "1cb6ba264873e0c7ecd2da8e6d396cb5",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -199,16 +199,16 @@
         },
         {
             "name": "slim/slim",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim.git",
-                "reference": "a9abd36d53d9c1f7732f490f8e809e55045307b3"
+                "reference": "bc5f5a80d9f89620ad1a15db57f6a6bc88c2d3a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/a9abd36d53d9c1f7732f490f8e809e55045307b3",
-                "reference": "a9abd36d53d9c1f7732f490f8e809e55045307b3",
+                "url": "https://api.github.com/repos/codeguy/Slim/zipball/bc5f5a80d9f89620ad1a15db57f6a6bc88c2d3a6",
+                "reference": "bc5f5a80d9f89620ad1a15db57f6a6bc88c2d3a6",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2013-09-29 19:46:31"
+            "time": "2013-10-08 18:00:27"
         },
         {
             "name": "slim/views",
@@ -996,7 +996,58 @@
         }
     ],
     "packages-dev": [
-
+        {
+            "name": "phing/phing",
+            "version": "2.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phingofficial/phing.git",
+                "reference": "3f7d71bf561bafea39087250f777b349438cc32e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phingofficial/phing/zipball/3f7d71bf561bafea39087250f777b349438cc32e",
+                "reference": "3f7d71bf561bafea39087250f777b349438cc32e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "bin": [
+                "bin/phing"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "classes/phing/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "classes"
+            ],
+            "license": [
+                "LGPL3"
+            ],
+            "authors": [
+                {
+                    "name": "Michiel Rook",
+                    "email": "mrook@php.net"
+                },
+                {
+                    "name": "Phing Community",
+                    "homepage": "http://www.phing.info/trac/wiki/Development/Contributors"
+                }
+            ],
+            "description": "PHing Is Not GNU make; it's a PHP project build system or build tool based on Apache Ant.",
+            "homepage": "http://www.phing.info/",
+            "keywords": [
+                "build",
+                "task",
+                "tool"
+            ],
+            "time": "2013-08-26 21:13:03"
+        }
     ],
     "aliases": [
 
