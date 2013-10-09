@@ -6,3 +6,5 @@ box.phar
 /vendor/
 /config/app.config.php
 /config/services/echalegas.json
+/public/index.php
+/bin/phing

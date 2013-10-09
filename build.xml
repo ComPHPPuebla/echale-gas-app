@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="echalegas" description="Échale Gas (OpenData Puebla 2013)" default="app:reset-dev">   
+    <!-- Initialize configuration files -->
+    <target name="app:init-config-files" description="Initialize configuration files">
+        <echo msg="Creating configuration files from .dist files" />
+        <exec passthru="true" command="cp config/services/echalegas.json.dist config/services/echalegas.json" />
+        <exec passthru="true" command="cp config/app.config.php.dist config/app.config.php" />
+        <exec passthru="true" command="cp public/index.php.dist public/index.php" />
+    </target>
+    
+    <!-- Install the application for development -->
+    <target name="app:reset-dev" description="Reset the development environment">
+        <echo msg="Resetting development environment" />
+        <phingcall target="app:init-config-files" />
+    </target>
+</project>

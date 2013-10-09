@@ -38,14 +38,20 @@
 		"zendframework/zend-i18n": "2.2.3",
 		"zendframework/zend-session": "2.2.3",
 		"zendframework/zend-math": "2.2.3",
-		"slim/slim": "2.3.2",
+		"slim/slim": "2.3.3",
 		"slim/views": "0.1.0",
 		"monolog/monolog": "1.6.0",
 		"guzzle/guzzle": "v3.7.4"
+    },
+    "require-dev": {
+        "phing/phing": "2.6.1"
     },
     "autoload": {
         "psr-0": {
             "EchaleGas": "src"
         }
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }
